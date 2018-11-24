@@ -18,7 +18,6 @@ object CafeX {
       * Calc service charge percentage based on items found in purchasedItems
       */
     if (purchasedItems.exists(menuItems(_).itemType == HotFood)) {
-      println("currentotal = " + currentTotal + "\nservice total = " + (currentTotal * BigDecimal("0.2")).min(20))
       currentTotal = currentTotal + (currentTotal * BigDecimal("0.2")).min(20)
     } else if (purchasedItems.exists(menuItems(_).itemType == Food)) {
       currentTotal = (currentTotal * BigDecimal("1.1"))
